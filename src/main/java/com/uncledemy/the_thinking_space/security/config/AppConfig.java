@@ -1,7 +1,6 @@
 package com.uncledemy.the_thinking_space.security.config;
 
 
-import com.uncledemy.the_thinking_space.exception.InvalidUsernameException;
 import com.uncledemy.the_thinking_space.model.User;
 import com.uncledemy.the_thinking_space.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -25,8 +24,8 @@ public class AppConfig {
             try{
                 User user = userService.loadUser(email);
                 return new SecureUser(user);
-            } catch (InvalidUsernameException e) {
-                throw new RuntimeException(e);
+            } catch (RuntimeException e) {
+                throw new RuntimeException();
             }
         };
     }

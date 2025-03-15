@@ -1,17 +1,20 @@
 package com.uncledemy.the_thinking_space.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
+import lombok.Value;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-@Entity
 @Table(name = "posts")
-@Data
+@Builder(toBuilder = true)
+@Value
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +38,7 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private Category category;
+    private List<Category> category;
 
     @ManyToMany
     @JoinTable(

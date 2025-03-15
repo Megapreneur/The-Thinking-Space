@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 @Tag(
         name = "User Controller for registration",
-        description = "This class implements user's registration on the application, in order to be able to utilize the patron and book management."
+        description = "This class implements user's registration on the application, in order to be able to create post in the blog."
 )
 public class UserController {
     private final UserService userService;

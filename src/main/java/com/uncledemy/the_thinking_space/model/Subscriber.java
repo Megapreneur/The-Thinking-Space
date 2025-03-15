@@ -17,7 +17,7 @@ public class Subscriber {
     @Column(nullable = false, unique = true)
     private String email;
 
-    private boolean confirmed = false; // To handle double opt-in confirmation
+    private boolean subscribed = false; // To handle double opt-in confirmation
 
     @CreationTimestamp
     private LocalDateTime createdAt;
